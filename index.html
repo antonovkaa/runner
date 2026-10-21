@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Пори року</title>
+</head>
+<body>
+
+    <h2>Визнач пору року</h2>
+
+    <label>Введи номер місяця (1–12):</label>
+    <input type="number" id="month">
+
+    <button onclick="checkMonth()">Перевірити</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkMonth() {
+            let m = Number(document.getElementById("month").value);
+            let result = "";
+
+            if (m <= 0) {
+                result = "нема такого";
+            } else if (m <= 2) {
+                result = "зима";
+            } else if (m <= 5) {
+                result = "весна";
+            } else if (m <= 8) {
+                result = "літо";
+            } else if (m <= 11) {
+                result = "осінь";
+            } else if (m == 12) {
+                result = "зима";
+            } else {
+                result = "no";
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+</body>
+</html>
